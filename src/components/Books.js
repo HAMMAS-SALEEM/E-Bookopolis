@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from './Navbar';
 
 const Books = () => {
   const booksArray = [{
@@ -6,6 +7,7 @@ const Books = () => {
   }];
   return (
     <>
+      <Navbar />
       <h1 className="books-page-title">E-Bookopolis</h1>
       <form id="form">
         <input type="text" id="book-title" name="book-title" className="book" placeholder="Book Name..." />
