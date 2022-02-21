@@ -1,13 +1,14 @@
 import React from 'react';
-import Navbar from './Navbar';
+import SingleBook from './SingleBook';
 
 const Books = () => {
   const booksArray = [{
     id: 1, title: 'Dune', author: 'Frank Herbert', genre: 'Science Fiction',
+  }, {
+    id: 2, title: 'The Hunger Games', author: 'Susan Collins', genre: 'Action',
   }];
   return (
     <>
-      <Navbar />
       <h1 className="books-page-title">E-Bookopolis</h1>
       <form id="form">
         <input type="text" id="book-title" name="book-title" className="book" placeholder="Book Name..." />
@@ -23,11 +24,7 @@ const Books = () => {
         {
               booksArray.map((book) => (
                 <li key={book.id}>
-                  <ul>
-                    <li>{book.genre}</li>
-                    <li>{book.title}</li>
-                    <li>{book.author}</li>
-                  </ul>
+                  <SingleBook book={book} />
                   <input type="button" className="remove-btn" id={book.id} value="Remove" />
                 </li>
               ))
