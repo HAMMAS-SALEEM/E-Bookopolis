@@ -11,9 +11,13 @@ const Books = () => {
       <h1 className="books-page-title">E-Bookopolis</h1>
       <form id="form">
         <input type="text" id="book-title" name="book-title" className="book" placeholder="Book Name..." />
-        <input type="text" id="book-author" name="book-author" className="book" placeholder="Book Author..." />
-        <input type="text" id="book-genre" name="book-genre" className="book" placeholder="Genre..." />
-        <input type="button" value="Submit" />
+        <select name="categories" id="categories-dropdown">
+          <option value="" disabled selected hidden>Categories</option>
+          <option value="horror">Horror</option>
+          <option value="sci-fic">Sci-Fic</option>
+          <option value="comedy">Comedy</option>
+        </select>
+        <input type="submit" value="Submit" />
       </form>
       <ul className="books-container">
         {
