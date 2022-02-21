@@ -1,4 +1,5 @@
 import React from 'react';
+import AddBook from './AddBook';
 import SingleBook from './SingleBook';
 
 const Books = () => {
@@ -10,16 +11,7 @@ const Books = () => {
   return (
     <>
       <h1 className="books-page-title">E-Bookopolis</h1>
-      <form id="form">
-        <input type="text" id="book-title" name="book-title" className="book" placeholder="Book Name..." />
-        <select name="categories" id="categories-dropdown">
-          <option value="" disabled selected hidden>Categories</option>
-          <option value="horror">Horror</option>
-          <option value="sci-fic">Sci-Fic</option>
-          <option value="comedy">Comedy</option>
-        </select>
-        <input type="submit" value="Submit" />
-      </form>
+      <AddBook />
       <ul className="books-container">
         {
               booksArray.map((book) => (
