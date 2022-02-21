@@ -23,11 +23,11 @@ Run the following commands to clone and run it.
 
 ### To clone the repository
 
-  `git clone git@github.com:HAMMAS-SALEEM/Math-Magician.git`
+  `git@github.com:HAMMAS-SALEEM/E-Bookopolis.git`
 
 ### To enter Directory
 
-`cd Math-Magician`
+`cd E-Bookopolis`
 
 ### To Install Packages
 
