@@ -17,8 +17,8 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOKS:
       return [...state, action.playload];
-    // case REMOVE_BOOKS:
-    //   return state.filter((book) => book.id === id);
+    case REMOVE_BOOKS:
+      return state.filter((book) => book.id.toString() !== action.playload.toString());
     default:
       return state;
   }

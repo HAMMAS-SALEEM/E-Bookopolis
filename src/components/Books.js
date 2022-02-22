@@ -4,9 +4,9 @@ import SingleBook from './SingleBook';
 
 const Books = () => {
   const booksArray = [{
-    id: 1, title: 'Dune', author: 'Frank Herbert', genre: 'Science Fiction',
+    id: '1', title: 'Dune', author: 'Frank Herbert',
   }, {
-    id: 2, title: 'The Hunger Games', author: 'Susan Collins', genre: 'Action',
+    id: '2', title: 'The Hunger Games', author: 'Susan Collins',
   }];
   return (
     <>
@@ -17,7 +17,6 @@ const Books = () => {
               booksArray.map((book) => (
                 <li key={book.id}>
                   <SingleBook book={book} />
-                  <input type="button" className="remove-btn" id={book.id} value="Remove" />
                 </li>
               ))
           }
