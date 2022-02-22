@@ -1,18 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const AddBook = () => (
+const AddBook = ({ submitBook, bookDetail }) => (
   <>
-    <form id="form">
-      <input type="text" id="book-title" name="book-title" className="book" placeholder="Book Name..." />
-      <select name="categories" id="categories-dropdown">
-        <option defaultValue="Categories">Categories</option>
-        <option value="horror">Horror</option>
-        <option value="sci-fic">Sci-Fic</option>
-        <option value="comedy">Comedy</option>
-      </select>
-      <input type="submit" value="Submit" />
+    <form id="form" onSubmit={submitBook}>
+      <input type="text" id="book-title" name="title" className="book" placeholder="Book Name..." onChange={bookDetail} required />
+      <input type="text" id="book-author" name="author" className="book" placeholder="Book Author..." onChange={bookDetail} required />
+      <input type="submit" />
     </form>
   </>
 );
+
+AddBook.propTypes = {
+  submitBook: PropTypes.func.isRequired,
+  bookDetail: PropTypes.func.isRequired,
+};
 
 export default AddBook;
