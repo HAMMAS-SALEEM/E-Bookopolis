@@ -15,7 +15,7 @@ export const removeBook = (playload) => ({
 
 export const getAPI = () => (dispatch) => fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/f9VfJNC0JfCwaWkDZ87T/books')
   .then((response) => response.json())
-  .then((obj)=>{
+  .then((obj) => {
     const obj2 = Object.keys(obj).map((key) => ({
       id: key,
       title: obj[key][0].title,
@@ -24,7 +24,7 @@ export const getAPI = () => (dispatch) => fetch('https://us-central1-bookstore-a
     obj2.forEach((item) => {
       dispatch({ type: ADD_BOOKS, playload: item });
     });
-  })
+  });
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
