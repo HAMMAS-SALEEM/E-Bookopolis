@@ -1,18 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { removeBook, getAPI } from '../redux/books/books';
+import { removeBook, getAPI, removeItem } from '../redux/books/books';
 
 const SingleBook = () => {
   const dispatch = useDispatch();
   const books = useSelector((state) => state.booksReducer);
 
   const sendToAPI = (id) => {
-    const url = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/f9VfJNC0JfCwaWkDZ87T/books/${id}`;
-    fetch(url, {
-      method: 'DELETE',
-    })
-      .then((response) => response.json())
-      .then((json) => console.log(json));
+    const code = id;
+    dispatch(removeItem(code));
   };
 
   useEffect(() => {
