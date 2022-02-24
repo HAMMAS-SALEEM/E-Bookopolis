@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAPI, removeItem } from '../redux/books/books';
+import store from '../redux/configureStore';
 
 const SingleBook = () => {
   const dispatch = useDispatch();
@@ -13,6 +14,9 @@ const SingleBook = () => {
 
   useEffect(() => {
     dispatch(getAPI());
+    return () => {
+      store.getState().booksReducer = [];
+    };
   }, []);
   return (
     <>
