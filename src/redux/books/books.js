@@ -13,12 +13,35 @@ export const removeBook = (playload) => ({
   playload,
 });
 
+export const getAPI = () => (dispatch) => fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/f9VfJNC0JfCwaWkDZ87T/books')
+  .then((response) => response.json())
+  .then((obj) => {
+    const obj2 = Object.keys(obj).map((key) => ({
+      item_id: key,
+      title: obj[key][0].title,
+      category: obj[key][0].category,
+    }));
+    obj2.forEach((item) => {
+      dispatch({ type: ADD_BOOKS, playload: item });
+    });
+  });
+
+export const removeItem = (id) => (dispatch) => {
+  const url = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/f9VfJNC0JfCwaWkDZ87T/books/${id}`;
+  fetch(url, {
+    method: 'DELETE',
+  })
+    .then((response) => response.json())
+    .catch((err) => console.log(err));
+  dispatch({ type: REMOVE_BOOKS, playload: id });
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOKS:
       return [...state, action.playload];
     case REMOVE_BOOKS:
-      return state.filter((book) => book.id.toString() !== action.playload.toString());
+      return state.filter((book) => book.item_id !== action.playload);
     default:
       return state;
   }
