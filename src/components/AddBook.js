@@ -15,7 +15,8 @@ const AddBook = () => {
         'Content-type': 'application/json',
       },
     })
-      .then((response) => response.json());
+      .then((response) => response.json())
+      .catch((json) => console.log(json));
   };
 
   const submitBook = (e) => {
