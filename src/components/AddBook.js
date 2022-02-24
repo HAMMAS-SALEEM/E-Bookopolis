@@ -4,19 +4,35 @@ import { addBook } from '../redux/books/books';
 
 const AddBook = () => {
   const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
   const dispatch = useDispatch();
-  const submitBook = (e) => {
+
+  const sendToAPI = (data) => {
+    fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/f9VfJNC0JfCwaWkDZ87T/books', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json))
+      .then((err) => err);
+  };
+
+  const submitBook = async (e) => {
     e.preventDefault();
     const form = e.target;
     const book = {
-      id: new Date().getTime().toString(),
+      item_id: new Date().getTime().toString(),
       title,
-      author,
+      category,
     };
+
     dispatch(addBook(book));
+    sendToAPI(book);
     setTitle('');
-    setAuthor('');
+    setCategory('');
     form.reset();
   };
 
@@ -25,7 +41,7 @@ const AddBook = () => {
     if (e.target.id === 'book-title') {
       setTitle(value);
     } else {
-      setAuthor(value);
+      setCategory(value);
     }
   };
 
