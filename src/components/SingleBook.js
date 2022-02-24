@@ -20,11 +20,11 @@ const SingleBook = () => {
       books.length === 0
         ? 'No Books Available'
         : books.map((book) => (
-          <li key={book.id}>
+          <li key={book.item_id}>
             <ul>
               <li>{book.title}</li>
               <li>{book.category}</li>
-              <li><input type="button" className="remove-btn" id={book.id} onClick={sendToAPI} value="Remove" /></li>
+              <li><input type="button" className="remove-btn" id={book.item_id} onClick={sendToAPI} value="Remove" /></li>
             </ul>
           </li>
         ))

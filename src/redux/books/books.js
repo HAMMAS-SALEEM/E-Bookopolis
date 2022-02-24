@@ -17,7 +17,7 @@ export const getAPI = () => (dispatch) => fetch('https://us-central1-bookstore-a
   .then((response) => response.json())
   .then((obj) => {
     const obj2 = Object.keys(obj).map((key) => ({
-      id: key,
+      item_id: key,
       title: obj[key][0].title,
       category: obj[key][0].category,
     }));
@@ -26,20 +26,7 @@ export const getAPI = () => (dispatch) => fetch('https://us-central1-bookstore-a
     });
   });
 
-export const sendToAPI = (data) => {
-  fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/f9VfJNC0JfCwaWkDZ87T/books', {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers: {
-      'Content-type': 'application/json',
-    },
-  })
-    .then((response) => response.json())
-    .then(() => getAPI());
-};
-
 export const removeItem = (id) => (dispatch) => {
-  console.log(id);
   const url = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/f9VfJNC0JfCwaWkDZ87T/books/${id}`;
   fetch(url, {
     method: 'DELETE',
@@ -54,7 +41,7 @@ const reducer = (state = initialState, action) => {
     case ADD_BOOKS:
       return [...state, action.playload];
     case REMOVE_BOOKS:
-      return state.filter((book) => book.id.toString() !== action.playload.toString());
+      return state.filter((book) => book.item_id !== action.playload);
     default:
       return state;
   }
