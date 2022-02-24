@@ -20,7 +20,7 @@ const AddBook = () => {
       .then((err) => err);
   };
 
-  const submitBook = async (e) => {
+  const submitBook = (e) => {
     e.preventDefault();
     const form = e.target;
     const book = {

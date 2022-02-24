@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { removeBook, getAPI, removeItem } from '../redux/books/books';
+import { getAPI, removeItem } from '../redux/books/books';
 
 const SingleBook = () => {
   const dispatch = useDispatch();
@@ -15,11 +15,11 @@ const SingleBook = () => {
     dispatch(getAPI());
   }, []);
 
-  const removeSingleBook = (e) => {
-    const { id } = e.target;
-    dispatch(removeBook(id));
-    sendToAPI(id);
-  };
+  // const removeSingleBook = (e) => {
+  //   const { id } = e.target;
+  //   dispatch(removeBook(id));
+  //   sendToAPI(id);
+  // };
   return (
     <>
       {
@@ -30,7 +30,7 @@ const SingleBook = () => {
             <ul>
               <li>{book.title}</li>
               <li>{book.category}</li>
-              <li><input type="button" className="remove-btn" id={book.id} onClick={removeSingleBook} value="Remove" /></li>
+              <li><input type="button" className="remove-btn" id={book.id} onClick={sendToAPI} value="Remove" /></li>
             </ul>
           </li>
         ))

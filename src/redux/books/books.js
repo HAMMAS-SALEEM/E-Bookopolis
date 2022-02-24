@@ -27,15 +27,14 @@ export const getAPI = () => (dispatch) => fetch('https://us-central1-bookstore-a
   });
 
 export const removeItem = (id) => (dispatch) => {
+  console.log(id);
   const url = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/f9VfJNC0JfCwaWkDZ87T/books/${id}`;
   fetch(url, {
     method: 'DELETE',
   })
     .then((response) => response.json())
-    .then((json) => {
-      console.log(json);
-      dispatch({ type: REMOVE_BOOKS, playload: id });
-    });
+    .catch((err) => console.log(err));
+  dispatch({ type: REMOVE_BOOKS, playload: id.target.id });
 };
 
 const reducer = (state = initialState, action) => {
