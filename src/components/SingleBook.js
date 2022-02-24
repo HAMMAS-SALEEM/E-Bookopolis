@@ -6,20 +6,14 @@ const SingleBook = () => {
   const dispatch = useDispatch();
   const books = useSelector((state) => state.booksReducer);
 
-  const sendToAPI = (id) => {
-    const code = id;
+  const sendToAPI = (e) => {
+    const code = e.target.id;
     dispatch(removeItem(code));
   };
 
   useEffect(() => {
     dispatch(getAPI());
   }, []);
-
-  // const removeSingleBook = (e) => {
-  //   const { id } = e.target;
-  //   dispatch(removeBook(id));
-  //   sendToAPI(id);
-  // };
   return (
     <>
       {

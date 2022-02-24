@@ -26,6 +26,18 @@ export const getAPI = () => (dispatch) => fetch('https://us-central1-bookstore-a
     });
   });
 
+export const sendToAPI = (data) => {
+  fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/f9VfJNC0JfCwaWkDZ87T/books', {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then(() => getAPI());
+};
+
 export const removeItem = (id) => (dispatch) => {
   console.log(id);
   const url = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/f9VfJNC0JfCwaWkDZ87T/books/${id}`;
@@ -34,7 +46,7 @@ export const removeItem = (id) => (dispatch) => {
   })
     .then((response) => response.json())
     .catch((err) => console.log(err));
-  dispatch({ type: REMOVE_BOOKS, playload: id.target.id });
+  dispatch({ type: REMOVE_BOOKS, playload: id });
 };
 
 const reducer = (state = initialState, action) => {

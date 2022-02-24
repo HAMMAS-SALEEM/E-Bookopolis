@@ -1,24 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/books';
+import { sendToAPI } from '../redux/books/books';
 
 const AddBook = () => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
   const dispatch = useDispatch();
-
-  const sendToAPI = (data) => {
-    fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/f9VfJNC0JfCwaWkDZ87T/books', {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-type': 'application/json',
-      },
-    })
-      .then((response) => response.json())
-      .then((json) => console.log(json))
-      .then((err) => err);
-  };
 
   const submitBook = (e) => {
     e.preventDefault();
@@ -28,9 +15,7 @@ const AddBook = () => {
       title,
       category,
     };
-
-    dispatch(addBook(book));
-    sendToAPI(book);
+    dispatch(sendToAPI(book));
     setTitle('');
     setCategory('');
     form.reset();
