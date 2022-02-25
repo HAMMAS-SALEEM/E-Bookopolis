@@ -1,20 +1,90 @@
+.books-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.books-container {
+    padding: 20px;
+}
+
+.single-book {
+    margin-top: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.book-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.book-api-details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.progress-details-container {
+    display: flex;
+    flex-direction: column;
+}
+
 li {
     list-style: none    ;
 }
 
 .circular-progress {
     height: 70px;
-    width: 70px;
 }
 
-.book-details {
+.book-btn-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.book-title {
+    font-family: RobotoSlab;
+    font-size: 1.375rem;
+    width: 3.375rem;
+    font-weight: bold;
+    letter-spacing: -0.2px;
+    color: black;
+}
+
+.book-category {
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    font-size: 0.875rem
+}
+
+.small-horizontal-line,.horizontal-line {
+    width: 1px;
+    height: 100%;
+    background-color: rgb(168, 167, 167);
 }
 
 .horizontal-line {
-    width: 5px;
-    height: 100%;
-    background-color: black;
-    margin-left: 50px;
+    display: none;
+}
+
+@media screen and (min-width: 796px)  {
+    .book-details {
+        justify-content: space-between;
+    }
+
+    .book-btn-container {
+        width: 30%;
+    }
+
+    .progress-details-container {
+        flex-direction: row;
+        width: 40%;
+        justify-content: space-evenly;
+    }
+
+    .horizontal-line {
+        display: block;
+    }
 }
