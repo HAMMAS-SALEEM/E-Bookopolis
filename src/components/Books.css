@@ -53,7 +53,8 @@ li {
 .current-chapter,
 .chapter-number,
 .update-progress-btn,
-.book-manipulate-btn {
+.book-manipulate-btn,
+.form-submit-btn {
   font-weight: 300;
   font-size: 0.813rem;
   border: none;
@@ -97,8 +98,21 @@ li {
   background-color: rgb(168, 167, 167);
 }
 
+.book-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 60px 20px;
+  justify-content: space-between;
+}
+
 .horizontal-line {
   display: none;
+}
+
+.form-submit-btn {
+  background-color: #0290ff;
+  color: #fff;
+  border-radius: 3px;
 }
 
 @media screen and (min-width: 796px) {
@@ -114,5 +128,21 @@ li {
 
   .horizontal-line {
     display: block;
+  }
+
+  .book-form {
+    flex-direction: row;
+  }
+
+  #book-title {
+    width: 55%;
+  }
+
+  .book-author-dropdown {
+    width: 20%;
+  }
+
+  .form-submit-btn {
+    width: 15%;
   }
 }
