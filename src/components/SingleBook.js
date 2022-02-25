@@ -43,9 +43,9 @@ const SingleBook = () => {
                       <li><div className="horizontal-line"> </div></li>
                       <li>
                         <ul>
-                          <li>Current Chapter</li>
-                          <li>Chapter 01</li>
-                          <li><button type="button">Update Progress</button></li>
+                          <li className="current-chapter">Current Chapter</li>
+                          <li className="chapter-number">Chapter 01</li>
+                          <li><button type="button" className="update-progress-btn">Update Progress</button></li>
                         </ul>
                       </li>
                     </ul>
@@ -54,11 +54,11 @@ const SingleBook = () => {
               </li>
               <li>
                 <ul className="book-btn-container">
-                  <li><input type="button" className="comments-btn btn" value="Comments" /></li>
+                  <li><input type="button" className="comments-btn book-manipulate-btn" value="Comments" /></li>
+                  <li><div className="small-horizontal-line "> </div></li>
+                  <li><input type="button" className="remove-btn book-manipulate-btn" id={book.item_id} onClick={sendToAPI} value="Remove" /></li>
                   <li><div className="small-horizontal-line"> </div></li>
-                  <li><input type="button" className="remove-btn btn" id={book.item_id} onClick={sendToAPI} value="Remove" /></li>
-                  <li><div className="small-horizontal-line"> </div></li>
-                  <li><input type="button" className="edit-btn btn" value="Edit" /></li>
+                  <li><input type="button" className="edit-btn book-manipulate-btn " value="Edit" /></li>
                 </ul>
               </li>
             </ul>

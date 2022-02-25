@@ -1,90 +1,118 @@
+li {
+  list-style: none;
+}
+
 .books-section {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .books-container {
-    padding: 20px;
+  padding: 20px;
 }
 
 .single-book {
-    margin-top: 30px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.book-details {
-    display: flex;
-    justify-content: space-between;
+  margin-top: 30px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 .book-api-details-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.progress-details-container {
-    display: flex;
-    flex-direction: column;
-}
-
-li {
-    list-style: none    ;
-}
-
-.circular-progress {
-    height: 70px;
-}
-
-.book-btn-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .book-title {
-    font-family: RobotoSlab;
-    font-size: 1.375rem;
-    width: 3.375rem;
-    font-weight: bold;
-    letter-spacing: -0.2px;
-    color: black;
+  font-size: 1.375rem;
+  font-weight: bold;
+  color: black;
 }
 
 .book-category {
-    color: rgba(0, 0, 0, 0.5);
-    font-weight: bold;
-    font-size: 0.875rem
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  font-size: 0.875rem;
 }
 
-.small-horizontal-line,.horizontal-line {
-    width: 1px;
-    height: 100%;
-    background-color: rgb(168, 167, 167);
+.book-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress-details-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.circular-progress {
+  height: 70px;
+}
+
+.current-chapter,
+.chapter-number,
+.update-progress-btn,
+.book-manipulate-btn {
+  font-weight: 300;
+  font-size: 0.813rem;
+  border: none;
+}
+
+.current-chapter {
+  color: rgb(199, 199, 199);
+}
+
+.chapter-number {
+  font-size: 1rem;
+  color: black;
+  margin-top: 10px;
+}
+
+.update-progress-btn {
+  background-color: #0290ff;
+  color: white;
+  width: 110px;
+  height: 25px;
+  border-radius: 3px;
+  margin-top: 15px;
+}
+
+.book-manipulate-btn {
+  color: #4386bf;
+  background: none;
+}
+
+.book-btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 180px;
+}
+
+.small-horizontal-line,
+.horizontal-line {
+  width: 1px;
+  height: 100%;
+  background-color: rgb(168, 167, 167);
 }
 
 .horizontal-line {
-    display: none;
+  display: none;
 }
 
-@media screen and (min-width: 796px)  {
-    .book-details {
-        justify-content: space-between;
-    }
+@media screen and (min-width: 796px) {
+  .book-details {
+    justify-content: space-between;
+  }
 
-    .book-btn-container {
-        width: 30%;
-    }
+  .progress-details-container {
+    flex-direction: row;
+    width: 40%;
+    justify-content: space-evenly;
+  }
 
-    .progress-details-container {
-        flex-direction: row;
-        width: 40%;
-        justify-content: space-evenly;
-    }
-
-    .horizontal-line {
-        display: block;
-    }
+  .horizontal-line {
+    display: block;
+  }
 }
