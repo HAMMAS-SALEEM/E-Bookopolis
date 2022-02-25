@@ -47,7 +47,7 @@ const AddBook = () => {
     <>
       <form id="form" onSubmit={submitBook}>
         <input type="text" id="book-title" name="title" className="book" placeholder="Book Name..." onChange={bookDetail} required />
-        <input type="text" id="book-author" name="author" className="book" placeholder="Book Author..." onChange={bookDetail} required />
+        <input type="text" id="book-author" name="author" className="book" placeholder="Book Category..." onChange={bookDetail} required />
         <input type="submit" />
       </form>
     </>
