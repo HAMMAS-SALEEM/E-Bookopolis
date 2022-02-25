@@ -50,10 +50,14 @@ const AddBook = () => {
   ];
   return (
     <>
-      <form id="form" className="book-form" onSubmit={submitBook}>
-        <input type="text" id="book-title" name="title" className="book" placeholder="Book Name..." onChange={bookDetail} required />
-        <Select className="book-author-dropdown" options={options} onChange={(e) => setCategory(e.value)} />
-        <input type="submit" className="form-submit-btn" />
+      <hr className="form-upper-border" />
+      <form id="form" onSubmit={submitBook}>
+        <h2 className="form-title">Add Books</h2>
+        <div className="book-form">
+          <input type="text" id="book-title" name="title" className="book" placeholder="Book title" onChange={bookDetail} required />
+          <Select className="book-author-dropdown" placeholder="Category" options={options} onChange={(e) => setCategory(e.value)} />
+          <input type="submit" className="form-submit-btn" />
+        </div>
       </form>
     </>
   );
