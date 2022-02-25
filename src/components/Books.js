@@ -4,10 +4,10 @@ import SingleBook from './SingleBook';
 
 const Books = () => (
   <>
-    <AddBook />
     <ul className="books-container">
       <SingleBook />
     </ul>
+    <AddBook />
   </>
 );
 

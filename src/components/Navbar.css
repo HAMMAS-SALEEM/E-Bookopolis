@@ -34,7 +34,7 @@
 }
 
 .user-icon-container {
-    background-color: rgb(218, 218, 218);
+    border: 1px solid rgb(218, 218, 218);
     padding: 10px;
     border-radius: 50%;
 }
