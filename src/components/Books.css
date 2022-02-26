@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+li {
+  list-style: none;
+}
+
+.books-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.books-container {
+  padding: 20px;
+}
+
+.single-book {
+  margin-top: 30px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.book-api-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.book-title {
+  font-size: 1.375rem;
+  font-weight: bold;
+  color: black;
+}
+
+.book-category {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.book-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress-details-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.circular-progress {
+  height: 70px;
+}
+
+.current-chapter,
+.chapter-number,
+.update-progress-btn,
+.book-manipulate-btn,
+.form-submit-btn {
+  font-weight: 300;
+  font-size: 0.813rem;
+  border: none;
+}
+
+.current-chapter {
+  color: rgb(199, 199, 199);
+}
+
+.chapter-number {
+  font-size: 1rem;
+  color: black;
+  margin-top: 10px;
+}
+
+.update-progress-btn {
+  background-color: #0290ff;
+  color: white;
+  width: 110px;
+  height: 25px;
+  border-radius: 3px;
+  margin-top: 15px;
+}
+
+.book-manipulate-btn {
+  color: #4386bf;
+  background: none;
+}
+
+.book-btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 180px;
+}
+
+.small-horizontal-line,
+.horizontal-line {
+  width: 1px;
+  height: 100%;
+  background-color: rgb(168, 167, 167);
+}
+
+.form-title {
+  color: #888;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.book-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 100px 20px;
+  justify-content: space-between;
+}
+
+.form-upper-border {
+  width: 97%;
+  text-align: center;
+  margin: 30px auto;
+}
+
+.horizontal-line {
+  display: none;
+}
+
+.form-submit-btn {
+  background-color: #0290ff;
+  color: #fff;
+  border-radius: 3px;
+}
+
+@media screen and (min-width: 796px) {
+  .book-details {
+    justify-content: space-between;
+  }
+
+  .progress-details-container {
+    flex-direction: row;
+    width: 40%;
+    justify-content: space-evenly;
+  }
+
+  .horizontal-line {
+    display: block;
+  }
+
+  .book-form {
+    flex-direction: row;
+  }
+
+  #book-title {
+    width: 55%;
+  }
+
+  .book-author-dropdown {
+    width: 25%;
+  }
+
+  .form-submit-btn {
+    width: 15%;
+  }
+}

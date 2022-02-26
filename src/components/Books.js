@@ -1,15 +1,15 @@
 import React from 'react';
 import AddBook from './AddBook';
 import SingleBook from './SingleBook';
+import './Books.css';
 
 const Books = () => (
-  <>
-    <h1 className="books-page-title">E-Bookopolis</h1>
-    <AddBook />
+  <section className="books-section">
     <ul className="books-container">
       <SingleBook />
     </ul>
-  </>
+    <AddBook />
+  </section>
 );
 
 export default Books;

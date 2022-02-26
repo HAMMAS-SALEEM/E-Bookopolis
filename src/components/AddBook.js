@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import Select from 'react-select';
 import { addBook } from '../redux/books/books';
+import './Books.css';
 
 const AddBook = () => {
   const [title, setTitle] = useState('');
@@ -36,19 +38,26 @@ const AddBook = () => {
 
   const bookDetail = (e) => {
     const { value } = e.target;
-    if (e.target.id === 'book-title') {
-      setTitle(value);
-    } else {
-      setCategory(value);
-    }
+    setTitle(value);
   };
 
+  const options = [
+    { value: 'Action', label: 'Action' },
+    { value: 'Sci-Fic', label: 'Sci-Fic' },
+    { value: 'Horror', label: 'Horror' },
+    { value: 'Drama', label: 'Drama' },
+    { value: 'Mystery', label: 'Mystery' },
+  ];
   return (
     <>
+      <hr className="form-upper-border" />
       <form id="form" onSubmit={submitBook}>
-        <input type="text" id="book-title" name="title" className="book" placeholder="Book Name..." onChange={bookDetail} required />
-        <input type="text" id="book-author" name="author" className="book" placeholder="Book Author..." onChange={bookDetail} required />
-        <input type="submit" />
+        <h2 className="form-title">Add Books</h2>
+        <div className="book-form">
+          <input type="text" id="book-title" name="title" className="book" placeholder="Book title" onChange={bookDetail} required />
+          <Select className="book-author-dropdown" placeholder="Category" options={options} onChange={(e) => setCategory(e.value)} />
+          <input type="submit" className="form-submit-btn" />
+        </div>
       </form>
     </>
   );
